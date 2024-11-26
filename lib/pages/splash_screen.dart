@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   final List<String> _images = [
     'lib/images/image1.png',
-    'lib/images//image2.jpeg',
+    'lib/images/image2.jpeg',
     'lib/images/image3.jpeg',
   ];
 
@@ -97,7 +97,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
           SizedBox(height: 20), // Add space below the progress indicator
           // Next button to navigate through onboarding steps
-     SizedBox(
+          SizedBox(
             width: double.infinity, // Make button take full width
             child: ElevatedButton(
               onPressed: () {
@@ -114,18 +114,23 @@ class _SplashScreenState extends State<SplashScreen> {
                   // If it's the last step, navigate to the registration page
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => Register()), // Replace with your registration page
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            Register()), // Replace with your registration page
                   );
                 }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue, // Set button color to blue
-                padding: EdgeInsets.symmetric(vertical: 16), // Increase vertical padding for size
+                padding: EdgeInsets.symmetric(
+                    vertical: 16), // Increase vertical padding for size
                 textStyle: TextStyle(
                   fontSize: 18, // Increase font size
                 ),
               ),
-              child: Text(_currentIndex < _texts.length - 1 ? 'Next' : 'Get Started'), // Button text
+              child: Text(_currentIndex < _texts.length - 1
+                  ? 'Next'
+                  : 'Get Started'), // Button text
             ),
           ),
           SizedBox(height: 40), // Add space below the button
